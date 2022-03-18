@@ -1,0 +1,846 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="http://github.com/team-openembedded/00_programming/cpp_primer_5th/cpp_primer_5th_summary/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.4">
+    
+    
+      
+        <title>cpp_primer_5th_summary - Open Embedded Forum</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cpp-primer-5th-summary" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Open Embedded Forum" class="md-header__button md-logo" aria-label="Open Embedded Forum" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Open Embedded Forum
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              cpp_primer_5th_summary
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Open Embedded Forum" class="md-nav__button md-logo" aria-label="Open Embedded Forum" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Open Embedded Forum
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          00_programming
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="00_programming" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          00_programming
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          cpp_primer_5th_summary
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        cpp_primer_5th_summary
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-1-getting-started" class="md-nav__link">
+    Chapter 1. Getting Started
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-i-the-basics" class="md-nav__link">
+    Part I: The Basics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-2-variables-and-basic-types" class="md-nav__link">
+    Chapter 2. Variables and Basic Types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-3-strings-vectors-and-arrays" class="md-nav__link">
+    Chapter 3. Strings, Vectors, and Arrays
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-4-expressions" class="md-nav__link">
+    Chapter 4. Expressions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-5-statements" class="md-nav__link">
+    Chapter 5. Statements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-6-functions" class="md-nav__link">
+    Chapter 6. Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-7-classes" class="md-nav__link">
+    Chapter 7. Classes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-ii-the-c-library" class="md-nav__link">
+    Part II: The C++ Library
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-8-the-io-library" class="md-nav__link">
+    Chapter 8. The IO Library
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-9-sequential-containers" class="md-nav__link">
+    Chapter 9. Sequential Containers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-10-generic-algorithms" class="md-nav__link">
+    chapter 10. Generic Algorithms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-11-associative-contains" class="md-nav__link">
+    Chapter 11. Associative Contains
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-12-dynamic-memory" class="md-nav__link">
+    Chapter 12. Dynamic Memory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-iii-tools-for-class-authors" class="md-nav__link">
+    Part III: Tools for Class Authors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-13-copy-control" class="md-nav__link">
+    Chapter 13. Copy Control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-14-overloaded-operations-and-conversions" class="md-nav__link">
+    Chapter 14. Overloaded Operations and Conversions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-15-object-oriented-programming" class="md-nav__link">
+    Chapter 15. Object-Oriented Programming
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-16-templates-and-generic-programming" class="md-nav__link">
+    Chapter 16. Templates and Generic Programming
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-iv-advanced-topics" class="md-nav__link">
+    Part IV: Advanced Topics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-17-specialized-library-facilities" class="md-nav__link">
+    Chapter 17. Specialized Library Facilities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-18-tools-for-large-programs" class="md-nav__link">
+    Chapter 18. Tools for Large Programs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-19-specialized-tools-and-techniques" class="md-nav__link">
+    Chapter 19. Specialized Tools and Techniques
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-a-the-library" class="md-nav__link">
+    Appendix A: The Library
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-link" class="md-nav__link">
+    Reference Link:
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../essential_cpp/essential_cpp_summary/" class="md-nav__link">
+        essential_cpp_summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/" class="md-nav__link">
+        Reference
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-1-getting-started" class="md-nav__link">
+    Chapter 1. Getting Started
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-i-the-basics" class="md-nav__link">
+    Part I: The Basics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-2-variables-and-basic-types" class="md-nav__link">
+    Chapter 2. Variables and Basic Types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-3-strings-vectors-and-arrays" class="md-nav__link">
+    Chapter 3. Strings, Vectors, and Arrays
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-4-expressions" class="md-nav__link">
+    Chapter 4. Expressions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-5-statements" class="md-nav__link">
+    Chapter 5. Statements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-6-functions" class="md-nav__link">
+    Chapter 6. Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-7-classes" class="md-nav__link">
+    Chapter 7. Classes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-ii-the-c-library" class="md-nav__link">
+    Part II: The C++ Library
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-8-the-io-library" class="md-nav__link">
+    Chapter 8. The IO Library
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-9-sequential-containers" class="md-nav__link">
+    Chapter 9. Sequential Containers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-10-generic-algorithms" class="md-nav__link">
+    chapter 10. Generic Algorithms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-11-associative-contains" class="md-nav__link">
+    Chapter 11. Associative Contains
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-12-dynamic-memory" class="md-nav__link">
+    Chapter 12. Dynamic Memory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-iii-tools-for-class-authors" class="md-nav__link">
+    Part III: Tools for Class Authors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-13-copy-control" class="md-nav__link">
+    Chapter 13. Copy Control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-14-overloaded-operations-and-conversions" class="md-nav__link">
+    Chapter 14. Overloaded Operations and Conversions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-15-object-oriented-programming" class="md-nav__link">
+    Chapter 15. Object-Oriented Programming
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-16-templates-and-generic-programming" class="md-nav__link">
+    Chapter 16. Templates and Generic Programming
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-iv-advanced-topics" class="md-nav__link">
+    Part IV: Advanced Topics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-17-specialized-library-facilities" class="md-nav__link">
+    Chapter 17. Specialized Library Facilities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-18-tools-for-large-programs" class="md-nav__link">
+    Chapter 18. Tools for Large Programs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-19-specialized-tools-and-techniques" class="md-nav__link">
+    Chapter 19. Specialized Tools and Techniques
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-a-the-library" class="md-nav__link">
+    Appendix A: The Library
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-link" class="md-nav__link">
+    Reference Link:
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<div class="toc">
+<ul>
+<li><a href="#cpp-primer-5th-summary">CPP Primer 5th Summary</a><ul>
+<li><a href="#chapter-1-getting-started">Chapter 1. Getting Started</a></li>
+<li><a href="#part-i-the-basics">Part I: The Basics</a></li>
+<li><a href="#chapter-2-variables-and-basic-types">Chapter 2. Variables and Basic Types</a></li>
+<li><a href="#chapter-3-strings-vectors-and-arrays">Chapter 3. Strings, Vectors, and Arrays</a></li>
+<li><a href="#chapter-4-expressions">Chapter 4. Expressions</a></li>
+<li><a href="#chapter-5-statements">Chapter 5. Statements</a></li>
+<li><a href="#chapter-6-functions">Chapter 6. Functions</a></li>
+<li><a href="#chapter-7-classes">Chapter 7. Classes</a></li>
+<li><a href="#part-ii-the-c-library">Part II: The C++ Library</a></li>
+<li><a href="#chapter-8-the-io-library">Chapter 8. The IO Library</a></li>
+<li><a href="#chapter-9-sequential-containers">Chapter 9. Sequential Containers</a></li>
+<li><a href="#chapter-10-generic-algorithms">chapter 10. Generic Algorithms</a></li>
+<li><a href="#chapter-11-associative-contains">Chapter 11. Associative Contains</a></li>
+<li><a href="#chapter-12-dynamic-memory">Chapter 12. Dynamic Memory</a></li>
+<li><a href="#part-iii-tools-for-class-authors">Part III: Tools for Class Authors</a></li>
+<li><a href="#chapter-13-copy-control">Chapter 13. Copy Control</a></li>
+<li><a href="#chapter-14-overloaded-operations-and-conversions">Chapter 14. Overloaded Operations and Conversions</a></li>
+<li><a href="#chapter-15-object-oriented-programming">Chapter 15. Object-Oriented Programming</a></li>
+<li><a href="#chapter-16-templates-and-generic-programming">Chapter 16. Templates and Generic Programming</a></li>
+<li><a href="#part-iv-advanced-topics">Part IV: Advanced Topics</a></li>
+<li><a href="#chapter-17-specialized-library-facilities">Chapter 17. Specialized Library Facilities</a></li>
+<li><a href="#chapter-18-tools-for-large-programs">Chapter 18. Tools for Large Programs</a></li>
+<li><a href="#chapter-19-specialized-tools-and-techniques">Chapter 19. Specialized Tools and Techniques</a></li>
+<li><a href="#appendix-a-the-library">Appendix A: The Library</a></li>
+<li><a href="#reference-link">Reference Link:</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="cpp-primer-5th-summary"><strong>CPP Primer 5th Summary</strong></h1>
+<h2 id="chapter-1-getting-started">Chapter 1. Getting Started</h2>
+<h2 id="part-i-the-basics"><strong>Part I: The Basics</strong></h2>
+<h2 id="chapter-2-variables-and-basic-types">Chapter 2. Variables and Basic Types</h2>
+<h2 id="chapter-3-strings-vectors-and-arrays">Chapter 3. Strings, Vectors, and Arrays</h2>
+<h2 id="chapter-4-expressions">Chapter 4. Expressions</h2>
+<h2 id="chapter-5-statements">Chapter 5. Statements</h2>
+<h2 id="chapter-6-functions">Chapter 6. Functions</h2>
+<h2 id="chapter-7-classes">Chapter 7. Classes</h2>
+<h2 id="part-ii-the-c-library"><strong>Part II: The C++ Library</strong></h2>
+<h2 id="chapter-8-the-io-library">Chapter 8. The IO Library</h2>
+<h2 id="chapter-9-sequential-containers">Chapter 9. Sequential Containers</h2>
+<h2 id="chapter-10-generic-algorithms">chapter 10. Generic Algorithms</h2>
+<h2 id="chapter-11-associative-contains">Chapter 11. Associative Contains</h2>
+<h2 id="chapter-12-dynamic-memory">Chapter 12. Dynamic Memory</h2>
+<h2 id="part-iii-tools-for-class-authors"><strong>Part III: Tools for Class Authors</strong></h2>
+<h2 id="chapter-13-copy-control">Chapter 13. Copy Control</h2>
+<h2 id="chapter-14-overloaded-operations-and-conversions">Chapter 14. Overloaded Operations and Conversions</h2>
+<h2 id="chapter-15-object-oriented-programming">Chapter 15. Object-Oriented Programming</h2>
+<h2 id="chapter-16-templates-and-generic-programming">Chapter 16. Templates and Generic Programming</h2>
+<h2 id="part-iv-advanced-topics"><strong>Part IV: Advanced Topics</strong></h2>
+<h2 id="chapter-17-specialized-library-facilities">Chapter 17. Specialized Library Facilities</h2>
+<h2 id="chapter-18-tools-for-large-programs">Chapter 18. Tools for Large Programs</h2>
+<h2 id="chapter-19-specialized-tools-and-techniques">Chapter 19. Specialized Tools and Techniques</h2>
+<h2 id="appendix-a-the-library">Appendix A: The Library</h2>
+<h2 id="reference-link"><strong>Reference Link:</strong></h2>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+      
+        
+        <a href="../../essential_cpp/essential_cpp_summary/" class="md-footer__link md-footer__link--next" aria-label="Next: essential_cpp_summary" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              essential_cpp_summary
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020 - 2022 Ping Wu
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.sections", "navigation.expand", "navigation.indexes", "toc.follow"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.5413a266.min.js"></script>
+      
+    
+  </body>
+</html>

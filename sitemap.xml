@@ -1,63 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>None</loc>
-         <lastmod>2022-02-11</lastmod>
+         <loc>http://github.com/team-openembedded/</loc>
+         <lastmod>2022-03-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-02-11</lastmod>
+         <loc>http://github.com/team-openembedded/about/</loc>
+         <lastmod>2022-03-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-02-11</lastmod>
+         <loc>http://github.com/team-openembedded/reference/</loc>
+         <lastmod>2022-03-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-02-11</lastmod>
+         <loc>http://github.com/team-openembedded/00_programming/readme/</loc>
+         <lastmod>2022-03-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-02-11</lastmod>
+         <loc>http://github.com/team-openembedded/00_programming/cpp_primer_5th/cpp_primer_5th_summary/</loc>
+         <lastmod>2022-03-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-02-11</lastmod>
+         <loc>http://github.com/team-openembedded/00_programming/essential_cpp/essential_cpp_summary/</loc>
+         <lastmod>2022-03-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-02-11</lastmod>
+         <loc>http://github.com/team-openembedded/01_computer_science/</loc>
+         <lastmod>2022-03-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-02-11</lastmod>
+         <loc>http://github.com/team-openembedded/01_computer_science/computer_science_illuminated/summary_computer_science_illuminated/</loc>
+         <lastmod>2022-03-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-02-11</lastmod>
+         <loc>http://github.com/team-openembedded/100_blog/</loc>
+         <lastmod>2022-03-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-02-11</lastmod>
+         <loc>http://github.com/team-openembedded/10_rtos/</loc>
+         <lastmod>2022-03-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-02-11</lastmod>
+         <loc>http://github.com/team-openembedded/20_linux/</loc>
+         <lastmod>2022-03-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>None</loc>
-         <lastmod>2022-02-11</lastmod>
+         <loc>http://github.com/team-openembedded/30_qnx/</loc>
+         <lastmod>2022-03-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://github.com/team-openembedded/40_android/</loc>
+         <lastmod>2022-03-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://github.com/team-openembedded/50_microcontroller/</loc>
+         <lastmod>2022-03-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://github.com/team-openembedded/50_microcontroller/arm/stm32/stm32f103_arm_microcontroller_and_embedded_systems/summary_stm32f103_arm_microcontroller_and_embedded_systems/</loc>
+         <lastmod>2022-03-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://github.com/team-openembedded/60_microprocessor/</loc>
+         <lastmod>2022-03-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://github.com/team-openembedded/70_computer_architect/</loc>
+         <lastmod>2022-03-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://github.com/team-openembedded/80_computer_tools/</loc>
+         <lastmod>2022-03-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://github.com/team-openembedded/90_vendor/</loc>
+         <lastmod>2022-03-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
